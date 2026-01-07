@@ -3,7 +3,7 @@ import './styles/index.css'
 
 import { Routes, Route } from 'react-router-dom'
 
-import NavBar from './components/NavBar/NavBar'
+import Nav from './components/Nav/Nav'
 import Footer from './components/Footer/Footer'
 import HomePage from './components/HomePage/HomePage'
 import ProjectPage from './components/ProjectPage/ProjectPage'
