@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-
-@import "tailwindcss";
-
 * {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -10,13 +7,11 @@
 
 :root {
   --light-background: #fff;
-  --light-primary: #fd6b2d;
+  --light-primary: blue;
   --light-secondary: rgba(255, 231, 232);
   --light-secondary-transparent: rgba(255, 231, 232, 0.5);
-  --light-links: #fd6b2d;
+  --light-links: blue;
   --light-fonts: #000;
-  --light-white-fonts: #fff;
-  --light-divider: #000;
 
 }
 
@@ -29,8 +24,7 @@ h4, h5, h6 {
 }
 
 h1 {
-  text-align: left;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 h2 {
@@ -67,15 +61,4 @@ button, input, textarea, select, label {
 a {
   text-decoration: none;
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
