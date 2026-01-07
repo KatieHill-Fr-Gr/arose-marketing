@@ -6,7 +6,7 @@
 }
 
 :root {
-  --light-background: #fff;
+  --light-background: #cde0e6;
   --light-primary: blue;
   --light-secondary: rgba(255, 231, 232);
   --light-secondary-transparent: rgba(255, 231, 232, 0.5);
