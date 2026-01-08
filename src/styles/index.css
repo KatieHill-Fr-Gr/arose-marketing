@@ -6,9 +6,9 @@
 }
 
 :root {
-  --light-background: #cde0e6;
-  --light-primary: blue;
-  --light-secondary: rgba(255, 231, 232);
+  --brand-background: #cde0e6;
+  --brand-primary: #cde0e6;
+  --brand-secondary: #f0cbbd;
   --light-secondary-transparent: rgba(255, 231, 232, 0.5);
   --light-links: blue;
   --light-fonts: #000;
