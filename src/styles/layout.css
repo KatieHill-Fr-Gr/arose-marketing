@@ -34,7 +34,7 @@ main {
 }
 
 body {
-  background-color: var(--light-background);
+  background-color: var(--brand-background);
   color: #000;
 }
 

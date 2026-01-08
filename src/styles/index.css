@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-primary: #cde0e6;
+  --color-brand-secondary: #f0cbbd;
+  --color-brand-links: #f0cbbd;
+}
+
 * {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -9,10 +15,7 @@
   --brand-background: #cde0e6;
   --brand-primary: #cde0e6;
   --brand-secondary: #f0cbbd;
-  --light-secondary-transparent: rgba(255, 231, 232, 0.5);
-  --light-links: blue;
-  --light-fonts: #000;
-
+  --brand-accent: #f0cbbd;
 }
 
 h1, h2, h3, h4, h5, h6 {
