@@ -3,7 +3,9 @@
 @theme {
   --color-brand-primary: #cde0e6;
   --color-brand-secondary: #f0cbbd;
-  --color-brand-links: #f0cbbd;
+  --color-brand-links: #caa592;
+  --color-brand-border: #d5d3d4;
+  --color-brand-accent: #caa592;
 }
 
 * {
