@@ -8,7 +8,7 @@ const HomePage = () => {
         <main>
             <section className="h-screen flex items-center justify-start">
             <div className="w-full max-w-[1280px] mx-auto px-[clamp(1rem,3vw,3rem)]">
-            <h1 className="max-w-4xl">Lifecycle Marketing for <span className="italic">high-growth</span> businesses, startups & tech</h1>
+            <h1 className="md:max-w-4xl">Lifecycle Marketing for <span className="italic">high-growth</span> businesses, startups & tech</h1>
             </div>
             </section>
             <section className="h-screen flex items-center justify-start bg-brand-secondary">
