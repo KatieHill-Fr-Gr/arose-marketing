@@ -7,8 +7,8 @@ const currentYear = new Date().getFullYear();
 export default function Footer() {
   return (
     <footer className="w-full" style={{ backgroundColor: '#fff' }}>
-      <div className="mx-auto w-full px-2 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="mx-auto w-full px-2 pt-12 pb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
            <div>
             <h3 className="text-2xl font-bold mb-6">
               Lifecycle marketing & CRM specialist
@@ -17,10 +17,9 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="text-left">
-            <h6 className="text-lg font-semibold mb-4 text-left">Got a project?</h6>
             <ul className="w-full">
               <li className="flex items-center gap-1 w-full py-2">
-                <p>To find out more about my consultancy services, send me and email or book a call:</p>
+                <p>To find out more about my consultancy services, send me an email or book a call:</p>
               </li>
               <li className="flex items-center gap-1 w-full py-2">
                 <a
@@ -35,7 +34,6 @@ export default function Footer() {
 
           {/* Links */}
           <div className="text-right">
-            <h6 className="text-lg font-semibold text-gray-900 mb-4 text-left">Find out more</h6>
             <ul className="w-full">
               <li>
                 <Link
@@ -72,7 +70,7 @@ export default function Footer() {
               <SocialIcon url="https://www.instagram.com/" bgColor="black" fgColor="white" style={{ height: '100%', width: '100%' }} />
             </div>
             <div className="w-[28px] h-[28px]">
-              <SocialIcon url="https://www.linkedin.com/" bgColor="black" fgColor="white" style={{ height: '100%', width: '100%' }} />
+              <SocialIcon url="https://www.linkedin.com/in/emilyrosehill2604/" bgColor="black" fgColor="white" style={{ height: '100%', width: '100%' }} />
             </div>
           </div>
         </div>
