@@ -45,8 +45,16 @@ p {
 
 .page-container {
   width: 100%;
-  max-width: var(--content-width);
-  margin-inline: auto;
-  padding-inline: var(--content-padding);
   box-sizing: border-box;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
 }
