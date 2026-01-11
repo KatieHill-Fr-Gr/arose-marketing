@@ -1,7 +1,7 @@
 import HandWithLightbulb from '../../assets/HandWithLightbulb.jpeg'
 import HomeImg from '../../assets/HomeImg.jpeg'
 
-
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
 
@@ -25,8 +25,13 @@ const HomePage = () => {
             </section>
             <section className="h-1/2 flex items-center justify-start bg-brand-primary">
                 <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 pl-[clamp(1rem,3vw,3rem)]">
-                    <h2 className="max-w-4xl md:w-1/2 flex items-center">From developing creative concepts to coding emails, automation & analytics, I offer a complete service to boost customer loyalty</h2>
-                    <img src={HandWithLightbulb} alt="Illustration of black and white hand passing a pink lightbulb to another on a light blue background" className="md:w-1/2" />
+                    <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
+                    <h2>From developing creative concepts to coding emails, automation & analytics, I offer a complete service to boost customer loyalty</h2>
+                    <Link to="/" className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">Services</Link>
+                    </div>
+                    <div className="md:w-1/2 flex items-center">
+                    <img src={HandWithLightbulb} alt="Illustration of black and white hand passing a pink lightbulb to another on a light blue background" className="w-full object-cover" />
+                    </div>
                 </div>
             </section>
         </main >
