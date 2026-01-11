@@ -17,10 +17,10 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="text-left">
-            <h6 className="text-lg font-semibold mb-4 text-left">Let's work together</h6>
+            <h6 className="text-lg font-semibold mb-4 text-left">Got a project?</h6>
             <ul className="w-full">
               <li className="flex items-center gap-1 w-full py-2">
-                <p>Send me an email to discuss how I can help you boost customer loyalty.</p>
+                <p>To find out more about my consultancy services, send me and email or book a call:</p>
               </li>
               <li className="flex items-center gap-1 w-full py-2">
                 <a
