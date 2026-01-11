@@ -3,9 +3,11 @@
 @theme {
   --color-brand-primary: #cde0e6;
   --color-brand-secondary: #f0cbbd;
+  --color-brand-neutral-1: #f0cbbd;
+  --color-brand-neutral-2: #cde0e6;
+  --color-brand-neutral-3: #e8dcc6;
   --color-brand-links: #caa592;
   --color-brand-border: #d5d3d4;
-  --color-brand-accent: #caa592;
 }
 
 * {
@@ -20,11 +22,18 @@
   --brand-accent: #f0cbbd;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Playfair", serif;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-family: "Lato", sans-serif;
 }
 
@@ -38,28 +47,32 @@ h2 {
   margin-bottom: 0;
 }
 
-h3 { 
+h3 {
   font-size: 1.75rem;
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
-h4 { 
-  font-size: 1.5rem; 
+h4 {
+  font-size: 1.5rem;
 }
 
-h5 { 
-  font-size: 1.25rem; 
+h5 {
+  font-size: 1.25rem;
 }
 
-h6 { 
-  font-size: 1rem; 
+h6 {
+  font-size: 1rem;
 }
 
 p {
   font-family: "Lato", sans-serif;
 }
 
-button, input, textarea, select, label {
+button,
+input,
+textarea,
+select,
+label {
   font-family: "Lato", sans-serif;
 }
 
