@@ -47,3 +47,14 @@ p {
   width: 100%;
   box-sizing: border-box;
 }
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+}
