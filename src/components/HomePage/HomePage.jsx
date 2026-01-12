@@ -1,5 +1,5 @@
 import HandWithLightbulb from '../../assets/HandWithLightbulb.jpeg'
-import HomeImg from '../../assets/HomeImg.jpeg'
+import placeHolder from '../../assets/placeHolder.jpeg'
 
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -44,8 +44,8 @@ const HomePage = () => {
                 </div>
             </section>
             <section className="h-1/2 flex items-center justify-start bg-white">
-                <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 pl-[clamp(1rem,3vw,3rem)]">
-                    <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
+                <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8">
+                    <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8 pl-[clamp(1rem,3vw,3rem)]">
                         <h2>Hi, I'm Emily, a CRM specialist with 10 years of experience working with a range of start-ups and tech businesses, including Moonpig, Symprove and JPMorgan Chase & Co.</h2>
                         <Link to="/" className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">Services</Link>
                     </div>
@@ -53,7 +53,7 @@ const HomePage = () => {
                         <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">About Me</h2>
                     </div>
                     <div className="md:w-1/2 flex items-center">
-                        <img src={HomeImg} alt="Profile Image of Emily Hill with blond hair and leopard-print top" className="w-full object-cover" />
+                        <img src={placeHolder} alt="Profile Image of Emily Hill with blond hair and leopard-print top" className="w-full h-full object-cover" />
                     </div>
                 </div>
             </section>

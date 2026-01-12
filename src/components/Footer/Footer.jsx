@@ -10,9 +10,9 @@ export default function Footer() {
       <div className="mx-auto w-full px-2 pt-12 pb-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
            <div>
-            <h3 className="text-2xl font-bold mb-6">
-              Lifecycle marketing & CRM specialist
-            </h3>
+            <h2 className="text-2xl font-bold mb-6">
+              Fancy a chat?
+            </h2>
           </div>
 
           {/* Contact Details */}
