@@ -16,6 +16,7 @@ const HomePage = () => {
             try {
                 setLoading(true)
                 const projects = await getProjects()
+                    console.log(projects.data)
                 setProjects(projects.data)
             } catch (error) {
                 setProjects([])
@@ -25,6 +26,8 @@ const HomePage = () => {
         }
         loadProjects()
     }, [])
+
+
 
 
 
@@ -54,20 +57,20 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <section className="h-1/2 flex items-center justify-start bg-brand-secondary">
+            <section className="flex items-center justify-start bg-brand-secondary py-24">
                 <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 pl-[clamp(1rem,3vw,3rem)]">
-                    <div className="p-24 max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
+                    <div className="max-w-4xl flex flex-col justify-center gap-8">
                         <h2>Recent projects</h2>
                     </div>
                 </div>
             </section>
             <section className="h-1/2 flex items-center justify-start bg-white">
-                <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-8 pl-[clamp(1rem,3vw,3rem)]">
+                <div className="w-full max-w-[1280px] mx-auto flex flex-col">
                     {loading ? (
-                        <p>Loading projects...</p>
+                        <p className="pl-[clamp(1rem,3vw,3rem)]">Loading projects...</p>
                     ) : projects.length > 0 ? (
                         projects.map((project) => (
-                            <div key={project._id} className="p-24 flex flex-col md:flex-row gap-8">
+                            <div key={project._id} className="flex flex-col md:flex-row gap-8 pl-[clamp(1rem,3vw,3rem)]">
                                 <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
                                     <h3>{project.title}</h3>
                                     <p>{project.subtitle}</p>
@@ -77,12 +80,12 @@ const HomePage = () => {
                                 </div>
 
                                 <div className="md:w-1/2 flex items-center">
-                                    <img src={project.img} alt="Project image" className="w-full object-cover" />
+                                    <img src={project.image} alt="Project image" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                         ))
                     ) : (
-                        <div className="p-24 max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
+                        <div className="pl-[clamp(1rem,3vw,3rem)] max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
                         <h2> No projects found</h2>
                         </div>
                         )}
