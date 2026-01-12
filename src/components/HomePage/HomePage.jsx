@@ -4,16 +4,18 @@ import HomeImg from '../../assets/HomeImg.jpeg'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
+import { getProjects } from '../../services/projects.js'
+
 const HomePage = () => {
-     const [projects, setProjects] = useState([])
-     const [loading, setLoading] = useState(true)
+    const [projects, setProjects] = useState([])
+    const [loading, setLoading] = useState(true)
 
 
-     useEffect(() => async () => {
+    useEffect(() => async () => {
         const loadProjects = async () => {
             try {
                 setLoading(true)
-                const projects = await projectsIndex()
+                const projects = await getProjects()
                 setProjects(projects.data)
             } catch (error) {
                 setProjects([])
@@ -22,7 +24,7 @@ const HomePage = () => {
             }
         }
         loadProjects()
-     }, [])
+    }, [])
 
 
 
@@ -44,8 +46,8 @@ const HomePage = () => {
                         <Link to="/" className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">Services</Link>
                     </div>
                     <div>
-                          <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">About Me</h2>
-                          </div>
+                        <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">About Me</h2>
+                    </div>
                     <div className="md:w-1/2 flex items-center">
                         <img src={HomeImg} alt="Profile Image of Emily Hill with blond hair and leopard-print top" className="w-full object-cover" />
                     </div>
@@ -53,9 +55,36 @@ const HomePage = () => {
             </section>
             <section className="h-1/2 flex items-center justify-start bg-brand-secondary">
                 <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 pl-[clamp(1rem,3vw,3rem)]">
-                    <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
+                    <div className="p-24 max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
                         <h2>Recent projects</h2>
                     </div>
+                </div>
+            </section>
+            <section className="h-1/2 flex items-center justify-start bg-white">
+                <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 pl-[clamp(1rem,3vw,3rem)]">
+                    {loading ? (
+                        <p>Loading projects...</p>
+                    ) : projects.length > 0 ? (
+                        projects.map((project) => (
+                            <div div key={project.id}>
+                                <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
+                                    <h3>{project.title}</h3>
+                                    <h4>{project.subtitle}</h4>
+                                    <Link to={`/`} className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">
+                                        View project
+                                    </Link>
+                                </div>
+
+                                <div className="md:w-1/2 flex items-center">
+                                    <img src={project.img} alt="Project image" className="w-full object-cover" />
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <div className="p-24 max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
+                        <h2> No projects found</h2>
+                        </div>
+                        )}
                 </div>
             </section>
             <section className="h-1/2 flex items-center justify-start bg-brand-primary">
@@ -67,8 +96,8 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div>
-                          <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">Expertise</h2>
-                          </div>
+                        <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">Expertise</h2>
+                    </div>
                     <div className="md:w-1/2 flex items-center">
                         <img src={HandWithLightbulb} alt="Illustration of black and white hand passing a pink lightbulb to another on a light blue background" className="w-full object-cover" />
                     </div>
