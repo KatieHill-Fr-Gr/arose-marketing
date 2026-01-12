@@ -43,6 +43,9 @@ const HomePage = () => {
                         <h2>Hi, I'm Emily, a CRM specialist with 10 years of experience working with a range of start-ups and tech businesses, including Moonpig, Symprove and JPMorgan Chase & Co.</h2>
                         <Link to="/" className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">Services</Link>
                     </div>
+                    <div>
+                          <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">About Me</h2>
+                          </div>
                     <div className="md:w-1/2 flex items-center">
                         <img src={HomeImg} alt="Profile Image of Emily Hill with blond hair and leopard-print top" className="w-full object-cover" />
                     </div>
@@ -58,9 +61,14 @@ const HomePage = () => {
             <section className="h-1/2 flex items-center justify-start bg-brand-primary">
                 <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 pl-[clamp(1rem,3vw,3rem)]">
                     <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
-                        <h2>From developing creative concepts to coding emails, automation & analytics, I offer a complete service to boost customer loyalty.</h2>
-                        <Link to="/" className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">Services</Link>
+                        <div className="flex flex-col gap-2">
+                            <h3>From developing concepts to automating emails, SMS & push notifications, and analytics, start building customer loyalty from day one.</h3>
+                            <Link to="/" className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">Services</Link>
+                        </div>
                     </div>
+                    <div>
+                          <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">Expertise</h2>
+                          </div>
                     <div className="md:w-1/2 flex items-center">
                         <img src={HandWithLightbulb} alt="Illustration of black and white hand passing a pink lightbulb to another on a light blue background" className="w-full object-cover" />
                     </div>
