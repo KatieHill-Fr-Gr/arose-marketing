@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { getToken } from '../utils/auth'
 
-const BASE_URL = import.meta.env.VITE_API_URL + '/projects'
+const BASE_URL = import.meta.env.VITE_API_URL + 'projects'
+
+console.log('API URL:', BASE_URL)
 
 export const getProjects = () => {
     return axios.get(BASE_URL)

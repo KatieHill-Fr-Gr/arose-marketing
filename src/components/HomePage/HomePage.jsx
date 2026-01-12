@@ -11,7 +11,7 @@ const HomePage = () => {
     const [loading, setLoading] = useState(true)
 
 
-    useEffect(() => async () => {
+    useEffect(() => {
         const loadProjects = async () => {
             try {
                 setLoading(true)
@@ -25,6 +25,7 @@ const HomePage = () => {
         }
         loadProjects()
     }, [])
+
 
 
 
@@ -61,15 +62,15 @@ const HomePage = () => {
                 </div>
             </section>
             <section className="h-1/2 flex items-center justify-start bg-white">
-                <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 pl-[clamp(1rem,3vw,3rem)]">
+                <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-8 pl-[clamp(1rem,3vw,3rem)]">
                     {loading ? (
                         <p>Loading projects...</p>
                     ) : projects.length > 0 ? (
                         projects.map((project) => (
-                            <div div key={project.id}>
+                            <div key={project._id} className="p-24 flex flex-col md:flex-row gap-8">
                                 <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
                                     <h3>{project.title}</h3>
-                                    <h4>{project.subtitle}</h4>
+                                    <p>{project.subtitle}</p>
                                     <Link to={`/`} className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">
                                         View project
                                     </Link>
