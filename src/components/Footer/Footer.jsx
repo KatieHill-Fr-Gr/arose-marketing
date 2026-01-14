@@ -7,12 +7,12 @@ const currentYear = new Date().getFullYear();
 export default function Footer() {
   return (
     <footer className="w-full" style={{ backgroundColor: '#fff' }}>
-      <div className="mx-auto w-full px-2 pt-12 pb-4">
+      <div className="mx-auto w-full max-w-[1280px] px-2 pt-12 pb-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
            <div>
-            <h3 className="text-2xl font-bold mb-6">
-              Lifecycle marketing & CRM specialist
-            </h3>
+            <h2 className="text-2xl font-bold mb-6">
+              Fancy a chat?
+            </h2>
           </div>
 
           {/* Contact Details */}
@@ -40,7 +40,7 @@ export default function Footer() {
                   to="/projects"
                   className="flex items-center justify-between w-full py-2 hover:text-brand-links transition-colors"
                 >
-                  <span>Projects </span><ChevronRight />
+                  <span>About me</span><ChevronRight />
 
                 </Link>
               </li>
