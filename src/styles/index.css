@@ -78,7 +78,15 @@ a {
 }
 
 @layer utilities {
+  .animate-left {
+    @apply opacity-0 -translate-x-12;
+  }
+
+  .animate-right {
+    @apply opacity-0 translate-x-12;
+  }
+
   .animate-in {
-    @apply opacity-100 translate-y-0;
+    @apply opacity-100 translate-x-0;
   }
 }

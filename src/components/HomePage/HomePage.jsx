@@ -11,7 +11,7 @@ import { useScrollAnimation } from '../../hooks/scrollFunction.js'
 const HomePage = () => {
     const [projects, setProjects] = useState([])
     const [loading, setLoading] = useState(true)
-    const animatedRef = useScrollAnimation()
+    useScrollAnimation()
 
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const HomePage = () => {
             try {
                 setLoading(true)
                 const projects = await getProjects()
-                    console.log(projects.data)
+                console.log(projects.data)
                 setProjects(projects.data)
             } catch (error) {
                 setProjects([])
@@ -43,11 +43,13 @@ const HomePage = () => {
             </section>
             <section className="h-1/2 flex items-center justify-start bg-white">
                 <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8">
-                    <div ref={animatedRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out max-w-4xl md:w-1/2 flex flex-col justify-center gap-8 ">
+                    <div data-animate data-delay="0ms" className="animate-left transition-all duration-700 ease-out max-w-4xl md:w-1/2 flex flex-col justify-center gap-8 ">
                         <h2>Hi, I'm Emily, a CRM specialist with 10 years of experience working with a range of start-ups and tech businesses, including Moonpig, Symprove and JPMorgan Chase & Co.</h2>
                         <Link to="/" className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">Read more</Link>
                     </div>
-                    <div>
+                    <div data-animate
+                        data-delay="200ms"
+                        className="animate-right transition-all duration-700 ease-out">
                         <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">About Me</h2>
                     </div>
                     <div className="md:w-1/2 flex items-center p-3">
@@ -57,7 +59,7 @@ const HomePage = () => {
             </section>
             <section className="flex items-center justify-start bg-brand-secondary py-24">
                 <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8">
-                    <div className="max-w-4xl flex flex-col justify-center gap-8">
+                    <div data-animate data-delay="0ms" className="animate-left transition-all duration-700 ease-out max-w-4xl flex flex-col justify-center gap-8">
                         <h2>Recent projects</h2>
                     </div>
                 </div>
@@ -84,9 +86,9 @@ const HomePage = () => {
                         ))
                     ) : (
                         <div className="p-24 max-w-4xl md:w-1/2 flex flex-col justify-center gap-8">
-                        <h2> No projects found</h2>
+                            <h2> No projects found</h2>
                         </div>
-                        )}
+                    )}
                 </div>
             </section>
             <section className="h-1/2 flex items-center justify-start bg-brand-primary">

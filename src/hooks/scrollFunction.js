@@ -14,9 +14,12 @@ export const useScrollAnimation = () => {
                     const delay = el.dataset.delay || '0ms'
 
                     el.style.transitionDelay = delay
-                    el.classList.add('animate-in')
 
-                    observer.unobserve(el)
+                    if (entry.isIntersecting) {
+                        el.classList.add('animate-in')
+                    } else {
+                        el.classList.remove('animate-in')
+                    }
                 })
             },
             { threshold: 0.15 }
