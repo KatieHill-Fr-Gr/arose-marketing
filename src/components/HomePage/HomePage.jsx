@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 import { getProjects } from '../../services/projects.js'
+import { useScrollAnimation } from '../../hooks/scrollFunction.js'
+
 
 const HomePage = () => {
     const [projects, setProjects] = useState([])
     const [loading, setLoading] = useState(true)
+    const animatedRef = useScrollAnimation()
 
 
     useEffect(() => {
@@ -27,11 +30,6 @@ const HomePage = () => {
         loadProjects()
     }, [])
 
-
-
-
-
-
     return (
         <main>
             <section className="relative h-screen flex items-center justify-start overflow-hidden">
@@ -45,7 +43,7 @@ const HomePage = () => {
             </section>
             <section className="h-1/2 flex items-center justify-start bg-white">
                 <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8">
-                    <div className="max-w-4xl md:w-1/2 flex flex-col justify-center gap-8 ">
+                    <div ref={animatedRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out max-w-4xl md:w-1/2 flex flex-col justify-center gap-8 ">
                         <h2>Hi, I'm Emily, a CRM specialist with 10 years of experience working with a range of start-ups and tech businesses, including Moonpig, Symprove and JPMorgan Chase & Co.</h2>
                         <Link to="/" className="border-2 border-brand-border rounded-full px-6 py-2 w-fit">Read more</Link>
                     </div>
@@ -53,7 +51,7 @@ const HomePage = () => {
                         <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">About Me</h2>
                     </div>
                     <div className="md:w-1/2 flex items-center p-3">
-                        <img src={placeHolder} alt="Profile Image of Emily Hill with blond hair and leopard-print top" className="w-full h-full object-cover p-3" />
+                        <img src={placeHolder} alt="Profile Image of Emily Hill" className="w-full h-full object-cover p-3" />
                     </div>
                 </div>
             </section>

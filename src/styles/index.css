@@ -17,9 +17,6 @@
 
 :root {
   --brand-background: #cde0e6;
-  --brand-primary: #cde0e6;
-  --brand-secondary: #f0cbbd;
-  --brand-accent: #f0cbbd;
 }
 
 h1,
@@ -78,4 +75,10 @@ label {
 
 a {
   text-decoration: none;
+}
+
+@layer utilities {
+  .animate-in {
+    @apply opacity-100 translate-y-0;
+  }
 }
