@@ -1,33 +1,41 @@
 import { useEffect } from 'react'
 
-export const useScrollAnimation = () => {
+export function useScrollAnimation() {
+  useEffect(() => {
 
-    useEffect(() => {
-        const elements = document.querySelectorAll('[data-animate]')
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
 
-                    const el = entry.target
-                    const delay = el.dataset.delay || '0ms'
+    if (prefersReducedMotion || isMobile) return
 
-                    el.style.transitionDelay = delay
+    const elements = document.querySelectorAll('[data-animate]')
 
-                    if (entry.isIntersecting) {
-                        el.classList.add('animate-in')
-                    } else {
-                        el.classList.remove('animate-in')
-                    }
-                })
-            },
-            { threshold: 0.15 }
-        )
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          const delay = el.dataset.delay || '0ms'
 
-        elements.forEach(el => observer.observe(el))
+          if (entry.isIntersecting) {
+            el.style.transitionDelay = delay
+            el.classList.add('animate-in')
+          } else {
+            el.style.transitionDelay = '0ms'
+            el.classList.remove('animate-in')
+          }
+        })
+      },
+      {
+        threshold: 0,
+        rootMargin: '0px 0px -30% 0px',
+      }
+    );
 
-        return () => observer.disconnect()
+    elements.forEach((el) => observer.observe(el))
 
-    }, [])
+    return () => observer.disconnect()
+  }, [])
 }

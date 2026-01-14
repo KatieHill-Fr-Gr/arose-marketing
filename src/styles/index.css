@@ -2,7 +2,8 @@
 
 @theme {
   --color-brand-primary: #cde0e6;
-  --color-brand-secondary: #f0cbbd;
+  --color-brand-secondary: rgb(240, 203, 189);
+  --color-brand-secondary-half: rgba(240, 203, 189, 0.5);
   --color-brand-neutral-1: #f0cbbd;
   --color-brand-neutral-2: #cde0e6;
   --color-brand-neutral-3: #e8dcc6;
@@ -81,12 +82,18 @@ a {
   .animate-left {
     @apply opacity-0 -translate-x-12;
   }
-
   .animate-right {
     @apply opacity-0 translate-x-12;
   }
-
   .animate-in {
     @apply opacity-100 translate-x-0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce), (max-width: 768px) {
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
