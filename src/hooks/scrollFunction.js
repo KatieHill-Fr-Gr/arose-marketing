@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export function useScrollAnimation() {
+export function useScrollAnimation(deps = []) {
   useEffect(() => {
 
     const prefersReducedMotion = window.matchMedia(
@@ -37,5 +37,5 @@ export function useScrollAnimation() {
     elements.forEach((el) => observer.observe(el))
 
     return () => observer.disconnect()
-  }, [])
+  }, deps)
 }

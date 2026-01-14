@@ -11,7 +11,7 @@ import { useScrollAnimation } from '../../hooks/scrollFunction.js'
 const HomePage = () => {
     const [projects, setProjects] = useState([])
     const [loading, setLoading] = useState(true)
-    useScrollAnimation()
+   
 
 
     useEffect(() => {
@@ -30,13 +30,14 @@ const HomePage = () => {
         loadProjects()
     }, [])
 
+    useScrollAnimation([projects])
+
     return (
         <main>
             <section className="relative h-screen flex items-center justify-start overflow-hidden">
-                <div data-animate data-delay="0ms" className="animate-right transition-all duration-700 ease-out absolute top-1/2 -translate-y-1/2 right-10 w-125 h-125 bg-brand-secondary-half rounded-full opacity-50">
-                </div>
-                <div data-animate data-delay="200ms" className="animate-right transition-all duration-700 ease-out absolute top-1/2 -translate-y-1/2 right-80 w-125 h-125 bg-brand-secondary-half rounded-full opacity-50"></div>
-                <div data-animate data-delay="400ms" className="animate-right transition-all duration-700 ease-out absolute top-1/2 -translate-y-1/2 right-150 w-125 h-125 bg-brand-secondary-half rounded-full opacity-50"></div>
+                <div data-animate data-delay="0ms" className="animate-right transition-all duration-700 ease-out absolute top-1/2 -translate-y-1/2 right-10 w-125 h-125 bg-brand-secondary-half rounded-full opacity-50"></div>
+                <div data-animate data-delay="300ms" className="animate-right transition-all duration-700 ease-out absolute top-1/2 -translate-y-1/2 right-80 w-125 h-125 bg-brand-secondary-half rounded-full opacity-50"></div>
+                <div data-animate data-delay="600ms" className="animate-right transition-all duration-700 ease-out absolute top-1/2 -translate-y-1/2 right-150 w-125 h-125 bg-brand-secondary-half rounded-full opacity-50"></div>
                 <div className="relative z-10 w-full max-w-[1280px] mx-auto">
                     <h1 className="md:max-w-4xl">Lifecycle Marketing and CRM for <span className="italic">high-growth</span> businesses and <span className="italic">start-ups</span></h1>
                 </div>
@@ -52,7 +53,7 @@ const HomePage = () => {
                         className="animate-right transition-all duration-700 ease-out">
                         <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">About Me</h2>
                     </div>
-                    <div className="md:w-1/2 flex items-center p-3">
+                    <div data-animate data-delay="0ms" className="animate-right transition-all duration-700 ease-out md:w-1/2 flex items-center p-3">
                         <img src={placeHolder} alt="Profile Image of Emily Hill" className="w-full h-full object-cover p-3" />
                     </div>
                 </div>
@@ -79,7 +80,7 @@ const HomePage = () => {
                                     </Link>
                                 </div>
 
-                                <div className="md:w-1/2 flex items-center p-3">
+                                <div data-animate data-delay="0ms" className="animate-right transition-all duration-700 ease-out md:w-1/2 flex items-center p-3">
                                     <img src={project.image} alt="Project image" className="w-full h-full object-cover" />
                                 </div>
                             </div>
@@ -104,7 +105,7 @@ const HomePage = () => {
                         className="animate-right transition-all duration-700 ease-out" >
                         <h2 className="pt-12 md:[writing-mode:vertical-rl] [writing-mode:horizontal-tb]">Expertise</h2>
                     </div>
-                    <div className="md:w-1/2 flex items-center">
+                    <div data-animate data-delay="0ms" className="animate-right transition-all duration-700 ease-out md:w-1/2 flex items-center">
                         <img src={HandWithLightbulb} alt="Illustration of black and white hand passing a pink lightbulb to another on a light blue background" className="w-full object-cover" />
                     </div>
                 </div>
