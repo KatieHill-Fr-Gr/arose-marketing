@@ -1,23 +1,30 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 export const useScrollAnimation = () => {
-    const ref = useRef(null)
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in')
-                    observer.unobserve(entry.target)
-                }
-            },
-            { threshold: 0.1 }
-        )
-        if (ref.current) {
-            observer.observe(ref.current)
-        }
-        return () => observer.disconnect()
-    }, [])
+        const elements = document.querySelectorAll('[data-animate]')
 
-    return ref
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return
+
+                    const el = entry.target
+                    const delay = el.dataset.delay || '0ms'
+
+                    el.style.transitionDelay = delay
+                    el.classList.add('animate-in')
+
+                    observer.unobserve(el)
+                })
+            },
+            { threshold: 0.15 }
+        )
+
+        elements.forEach(el => observer.observe(el))
+
+        return () => observer.disconnect()
+
+    }, [])
 }
